@@ -1,12 +1,8 @@
 # README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
 * Ruby version
-
+  6.1.4.1
+* Entities
+  Test, Question, User, Test Administrator
 * System dependencies
 
 * Configuration
@@ -21,4 +17,3 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...

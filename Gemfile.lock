@@ -202,6 +202,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
+  i18n
   jbuilder (~> 2.7)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
