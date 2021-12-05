@@ -2,7 +2,7 @@
 * Ruby version
   6.1.4.1
 * Entities
-  Test, Question, User, Test Administrator
+  Test, Question, User, Answer, Category, Test result 
 * System dependencies
 
 * Configuration
