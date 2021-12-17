@@ -6,9 +6,9 @@ class Test < ApplicationRecord
   has_many :results, dependent: :destroy
   has_many :users, through: :results
 
-  def self.give_tests_by_category(category_title)
+  def self.tests_by_category(category_title)
     Test.joins(:category)
-        .where(categories: {title: category_title})
+        .where(categories: { title: category_title })
         .order(title: :desc)
         .pluck(:title)
   end
