@@ -14,18 +14,15 @@ class QuestionsController < ApplicationController
   end
 
   def new
-
   end
 
   def create
     question = @test.questions.build(question_params)
-    if question.save
-      render plain: question.inspect
-    end
+    render plain: question.inspect if question.save
   end
 
   def destroy
-    render plain: "Тест успешно удален" if Question.destroy(params[:id])
+    render plain: 'Тест успешно удален' if Question.destroy(params[:id])
   end
 
   private
