@@ -5,26 +5,40 @@ class QuestionsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
-    questions = @test.questions.all
+    redirect_to @test
+  end
 
-    render plain: questions.map { |question| question.inspect }.join("\n")
+  def destroy
+    @question.destroy
   end
 
   def show
-    render plain: @question.inspect
+  end
+
+  def edit
+    @test = @question.test
+  end
+
+  def update
+    if @question.update(question_params)
+      redirect_to @question
+    else
+      render :edit
+    end
   end
 
   def new
+    @question = @test.questions.build
   end
 
   def create
     question = @test.questions.build(question_params)
 
-    render plain: question.inspect if question.save
-  end
-
-  def destroy
-    render plain: 'Тест успешно удален' if @question.destroy
+    if question.save
+      redirect_to @test
+    else
+      :new
+    end
   end
 
   private

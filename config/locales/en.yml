@@ -31,3 +31,8 @@
 
 en:
   hello: "Hello world"
+  errors:
+    zero: "errors"
+    one: "error"
+    few: "errors"
+    other: "errors"
