@@ -4,6 +4,6 @@ module TestsHelper
                   5..Float::INFINITY => 'сложный' }.freeze
 
   def test_level(test)
-    TEST_LEVELS.select { |level| level == test.level }.values.first || 'Очень сложный'
+    TEST_LEVELS.select { |level| level === test.level }.values.first || 'Очень сложный'
   end
 end

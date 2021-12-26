@@ -1,8 +1,6 @@
 class TestsController < ApplicationController
   before_action :find_test, only: %i[edit update destroy show]
 
-  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
-
   def index
     @tests = Test.all
   end
@@ -16,7 +14,7 @@ class TestsController < ApplicationController
 
   def create
     @test = Test.create(test_params)
-    if @test.errors.empty?
+    if @test.save
       redirect_to @test
     else
       render :new
@@ -46,9 +44,5 @@ class TestsController < ApplicationController
 
   def test_params
     params.require(:test).permit(:title, :level, :category_id, :author_id)
-  end
-
-  def rescue_with_test_not_found
-    head 404
   end
 end
