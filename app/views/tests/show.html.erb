@@ -3,7 +3,7 @@
 
 <%= link_to 'Создать вопрос', new_test_question_path(@test) %><br>
 
-<% if @test.questions.count > 0 %>
+<% if @test.questions.any? %>
   <table>
     <tr>
       <th>Вопрос</th>
