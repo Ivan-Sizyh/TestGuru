@@ -1,30 +1,40 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, only: %i[index create new]
-  before_action :find_question, only: %i[show destroy edit]
+  before_action :find_test, only: %i[create new]
+  before_action :find_question, only: %i[show destroy edit update]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
-  def index
-    questions = @test.questions.all
-
-    render plain: questions.map { |question| question.inspect }.join("\n")
-  end
-
   def show
-    render plain: @question.inspect
   end
 
   def new
+    @question = @test.questions.build
   end
 
   def create
-    question = @test.questions.build(question_params)
+    @question = @test.questions.build(question_params)
 
-    render plain: question.inspect if question.save
+    if @question.save
+      redirect_to @question
+    else
+      render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @question.update(question_params)
+      redirect_to @question
+    else
+      render :edit
+    end
   end
 
   def destroy
-    render plain: 'Тест успешно удален' if @question.destroy
+    @question.destroy
+    redirect_to test_path(@question.test)
   end
 
   private
