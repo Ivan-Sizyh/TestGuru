@@ -1,0 +1,7 @@
+<h1>Тест <%= @result.test.title %> был пройден!</h1>
+
+<p>Правильных ответов: <%= @result.correct_questions %> из <%= @result.test.questions.count %></p>
+
+<%= render 'valuation' %>
+
+<%= link_to 'Список тестов', tests_path %>

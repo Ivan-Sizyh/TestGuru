@@ -25,13 +25,13 @@ questions = Question.create!([
                              ])
 
 Answer.create!([
-                 { text: '1290', correct: true, question: questions[0] },
-                 { text: '786', question: questions[0] },
+                 { text: '1290', question: questions[0] },
+                 { text: '786', correct: true, question: questions[0] },
                  { text: '2056', question: questions[0] },
                  { text: '1860', question: questions[0] },
                  { text: '64', question: questions[1] },
                  { text: '1024', question: questions[1] },
-                 { text: '516', correct: true, question: questions[1] },
+                 { text: '512', correct: true, question: questions[1] },
                  { text: '2048', question: questions[1] },
                  { text: 'C = sqrt(A^2 + B^2)', correct: true, question: questions[2] },
                  { text: 'C = sqrt(A^2 - B^2)', question: questions[2] },

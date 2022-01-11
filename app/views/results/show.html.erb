@@ -1,0 +1,24 @@
+<h1>Прохождение теста <%= @result.test.title %></h1>
+
+<p>
+  Вопрос №<%= @result.current_question_number %>
+</p>
+
+<p>
+  Вопросов в тесте: <%= @result.test.questions.count %>
+</p>
+
+<b>
+  <%= @result.current_question.body %>
+</b>
+
+<%= form_with url: result_path(@result), local: true, method: :put do |form|%>
+  <%= form.collection_check_boxes :answer_ids, @result.current_question.answers, :id, :text, include_hidden: false do |b| %>
+    <p>
+      <%= b.check_box id: "answer_ids_#{b.object.attributes['id']}"%>
+      <%= b.label %>
+    </p>
+  <% end %>
+
+  <p><%= form.submit 'Продолжить' %></p>
+<% end %>

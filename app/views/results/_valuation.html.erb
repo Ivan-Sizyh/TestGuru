@@ -1,0 +1,11 @@
+<% if calculate_result_percent(@result) >= 85 %>
+  <p>
+    Тест пройден успешно!
+    Процент успеха: <span class="good_test_result"><%= calculate_result_percent(@result) %>%</span>
+  </p>
+<% else %>
+  <p>
+    Тест не пройден!
+    Процент успеха: <span class="bad_test_result"><%= calculate_result_percent(@result) %>%</span>
+  </p>
+<% end %>
