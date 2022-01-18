@@ -1,0 +1,16 @@
+<h1>Вопрос</h1>
+
+<%= @answer.question.body %>
+
+<p>
+  <b>Ответ:</b>
+  <%= @answer.text %>
+</p>
+
+<p>
+  <b>Правильный:</b>
+  <%= I18n.t(@answer.correct)%>
+</p>
+
+<%= link_to 'Редактировать', edit_answer_path(@answer) %> |
+<%= link_to 'Вернуться', question_path(@answer.question) %>
