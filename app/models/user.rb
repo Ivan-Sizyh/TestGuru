@@ -4,11 +4,9 @@ class User < ApplicationRecord
   has_many :results, dependent: :destroy
   has_many :tests, through: :results, inverse_of: 'author'
 
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-
   validates :name, presence: true
   validates :email, presence: true, length: { maximum: 255 },
-            format: { with: VALID_EMAIL_REGEX },
+            format: { with: URI::MailTo::EMAIL_REGEXP },
             uniqueness: { case_sensitive: false }
 
   has_secure_password

@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def new
-    log_out
     @user = User.new
   end
 

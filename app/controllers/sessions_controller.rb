@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
   def new
-    log_out
   end
 
   def create
@@ -16,7 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    log_out
+    session.delete(:user_id)
     redirect_to login_path
   end
 end

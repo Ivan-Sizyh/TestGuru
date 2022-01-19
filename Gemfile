@@ -20,6 +20,8 @@ gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
+
+# For development on Windows
 gem 'bcrypt', '~> 3.1.11', git: 'https://github.com/codahale/bcrypt-ruby.git', ref: 'fbbece54c6cb8b53db01132c7eeb58955944547d', require: 'bcrypt'
 
 # Use Active Storage variant
