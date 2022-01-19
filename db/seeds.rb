@@ -1,6 +1,6 @@
 users = User.create!([
-                       { name: 'Иван', password: '1234567890', email: 'ivansizyh26@gmail.com' },
-                       { name: 'Павел', password: '0987654321', email: 'pavel@gmail.com' }
+                       { name: 'Иван', password_digest: BCrypt::Password.create('1234567890'), email: 'ivansizyh26@gmail.com' },
+                       { name: 'Павел', password_digest: BCrypt::Password.create('0987654321'), email: 'pavel@gmail.com' }
                      ])
 categories = Category.create!([
                                 { title: 'Математика' },
