@@ -22,13 +22,17 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 
 # For development on Windows
-gem 'bcrypt', '~> 3.1.11', git: 'https://github.com/codahale/bcrypt-ruby.git', ref: 'fbbece54c6cb8b53db01132c7eeb58955944547d', require: 'bcrypt'
+# gem 'bcrypt', '~> 3.1.11', git: 'https://github.com/codahale/bcrypt-ruby.git', ref: 'fbbece54c6cb8b53db01132c7eeb58955944547d', require: 'bcrypt'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+
+#AUTH
+
+gem 'devise', '~> 4.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -41,6 +45,8 @@ group :development do
   # Display performance information such as SQL time and flame graphs for each request in your browser.
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
   gem 'rack-mini-profiler', '~> 2.0'
+
+  gem 'letter_opener'
 end
 
 group :test do

@@ -1,0 +1,18 @@
+<h1>Просмотр вопроса</h1>
+<p>Вопрос: <%= @question.body %></p>
+<p>Тест: <%= @question.test.title %></p>
+
+<h2>Ответы на ворос:</h2>
+
+<%= link_to 'Создать ответ', new_admin_question_answer_path(@question) %>
+
+<ol>
+  <%= render @question.answers %>
+</ol>
+
+<%= link_to 'Вернуться к тесту', admin_test_path(@question.test) %>
+<%= link_to 'Редактировать', edit_admin_question_path(@question) %>
+<%= link_to 'Удалить',
+            admin_question_path(@question),
+            method: :delete,
+            data: { confirm: 'Удалить вопрос?' } %>

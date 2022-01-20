@@ -1,6 +1,9 @@
 users = User.create!([
-                       { name: 'Иван', password_digest: BCrypt::Password.create('1234567890'), email: 'ivansizyh26@gmail.com' },
-                       { name: 'Павел', password_digest: BCrypt::Password.create('0987654321'), email: 'pavel@gmail.com' }
+                       { first_name: 'Иван', password: '1234567890', email: 'ivansizyh26@gmail.com',
+                         confirmed_at: 'Wed, 19 Jan 2022 19:56:05.036169000 +07 +07:00',
+                         type: 'Admin', last_name: 'Сизых'},
+                       { first_name: 'Павел', password: '0987654321', email: 'pavel@gmail.com',
+                         confirmed_at: 'Wed, 19 Jan 2022 19:56:05.036169000 +07 +07:00', last_name: 'Ребров'}
                      ])
 categories = Category.create!([
                                 { title: 'Математика' },
@@ -10,7 +13,7 @@ categories = Category.create!([
                               ])
 tests = Test.create!([
                        { title: 'Математика средней школы', level: 1, category: categories[0], author: users[0] },
-                       { title: 'Автор и произведение', level: 0, category: categories[3], author: users[1] }
+                       { title: 'Автор и произведение', level: 0, category: categories[3], author: users[0] }
                      ])
 
 questions = Question.create!([

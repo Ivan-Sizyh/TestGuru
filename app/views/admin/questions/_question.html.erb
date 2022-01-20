@@ -1,0 +1,10 @@
+<tr>
+  <td><%= question.body %></td>
+  <td><%= link_to 'Просмотр', admin_question_path(question) %></td>
+  <td><%= link_to 'Редактирование', edit_admin_question_path(question) %></td>
+  <td><%= link_to 'Удалить',
+                  admin_question_path(question),
+                  method: :delete,
+                  data: { confirm: 'Удалить вопрос?' } %>
+  </td>
+</tr>

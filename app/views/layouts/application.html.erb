@@ -11,11 +11,14 @@
   </head>
 
   <body>
-    <%= render 'shared/header' %>
-
-    <% if logged_in? %>
-      <p class="nav user">Добро пожаловать, <b><%= current_user.email %></b></p>
+    <% if user_signed_in? %>
+      <p class="nav user">
+        Добро пожаловать, <b><%= current_user.email %></b> Гуру |
+        <%= link_to 'Выход', destroy_user_session_path, method: :delete %>
+      </p>
     <% end %>
+
+    <%= render 'shared/flash' %>
 
     <%= yield %>
 
