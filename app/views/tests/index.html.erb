@@ -1,7 +1,5 @@
 <h1>Список тестов</h1>
 
-<%= link_to 'Создать тест', new_test_path(@test) %>
-
 <table>
   <tr>
     <th>Название</th>
@@ -9,7 +7,7 @@
     <th>Уровень</th>
     <th>Категория</th>
     <th>Автор</th>
-    <th colspan="4">Действия</th>
+    <th>Действия</th>
   </tr>
 
   <%= render @tests %>
