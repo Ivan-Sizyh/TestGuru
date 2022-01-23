@@ -13,10 +13,12 @@ Rails.application.routes.draw do
   resources :results, only: %i[show update] do
     member do
       get :score
+      post :gist
     end
   end
 
   namespace :admin do
+    resources :gists, only: :index
     resources :tests do
       resources :questions, except: %i[index], shallow: true do
         resources :answers, except: %i[index], shallow: true

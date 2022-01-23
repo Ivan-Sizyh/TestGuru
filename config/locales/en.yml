@@ -36,3 +36,8 @@ en:
     one: "error"
     few: "errors"
     other: "errors"
+
+  results:
+    gist:
+      success: "Gist was successfully created! %{link_to}"
+      failure: "An error occurred while saving gist"

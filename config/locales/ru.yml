@@ -18,6 +18,12 @@ ru:
         other: "%{resource}: сохранение не удалось из-за %{count} ошибки:"
   :true: "Да"
   :false: "Нет"
+
+  results:
+    gist:
+      success: "Gist успешно сохранен! %{link_to}"
+      failure: "Во время сохранения gist произошла ошибка"
+
   activerecord:
     attributes:
       user:
