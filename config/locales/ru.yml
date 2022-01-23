@@ -24,6 +24,10 @@ ru:
       success: "Gist успешно сохранен! %{link_to}"
       failure: "Во время сохранения gist произошла ошибка"
 
+  services:
+    gist:
+      description: "Вопрос теста %{test} с TestGuru"
+
   activerecord:
     attributes:
       user:
