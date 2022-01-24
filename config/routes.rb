@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout },
              controllers: { sessions: 'user/sessions' }
 
+  resources :gists, only: :create
+
   resources :tests, only: :index do
     member do
       post :start
@@ -13,7 +15,6 @@ Rails.application.routes.draw do
   resources :results, only: %i[show update] do
     member do
       get :score
-      post :gist
     end
   end
 

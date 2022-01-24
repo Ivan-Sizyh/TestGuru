@@ -1,5 +1,5 @@
 <tr>
-  <td><%= link_to short_question(gist.question), admin_question_path(gist.question) %></td>
+  <td><%= link_to short_question(gist.question.body), admin_question_path(gist.question) %></td>
   <td><%= link_to gist_hash(gist.url), gist.url %></td>
   <td><%= gist.user.email %></td>
 </tr>

@@ -1,6 +1,6 @@
 module GistsHelper
   def short_question(question)
-    question[0..25]
+    question.truncate(25)
   end
 
   def gist_hash(gist_url)
