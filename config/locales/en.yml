@@ -36,3 +36,11 @@ en:
     one: "error"
     few: "errors"
     other: "errors"
+
+  gists:
+    success: "Gist was successfully created! %{link_to}"
+    failure: "An error occurred while saving gist"
+
+  services:
+    gist:
+      description: "A question about %{test} from TestGuru"
