@@ -5,11 +5,11 @@ document.addEventListener('turbolinks:load', function () {
 })
 
 function sortRowsByTitle(){
-    let table = document.querySelector('table')
+    const table = document.querySelector('table')
 
     //NodeList
     //https://developer.mozilla.org/en-US/docs/Web/API/NodeList
-    let rows = table.querySelectorAll('tr')
+    const rows = table.querySelectorAll('tr')
     let sortedRows = []
 
     for(let i = 1; i < rows.length; i++){
