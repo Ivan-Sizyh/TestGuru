@@ -27,6 +27,11 @@ ru:
     gist:
       description: "Вопрос теста %{test} с TestGuru"
 
+  admin:
+    tests:
+      form_inline:
+        submit: "OK"
+
   activerecord:
     attributes:
       user:

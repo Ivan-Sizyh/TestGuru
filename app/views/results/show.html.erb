@@ -8,6 +8,13 @@
   Вопросов в тесте: <%= @result.test.questions.count %>
 </p>
 
+<div class="progress_bar">
+  <%= content_tag :div,
+                  "",
+                  class: 'progress_bar_fill',
+                  data: { progress: @result.calculate_result_progress } %>
+</div>
+
 <p>
   <b><%= @result.current_question.body %></b>
 </p>
