@@ -1,8 +1,8 @@
 document.addEventListener('turbolinks:load', function () {
     const control = document.querySelector('.password_validate')
 
-    const passwordField = document.querySelector('#user_password')
-    const passwordConfField = document.querySelector('#user_password_confirmation')
+    const passwordField = control.querySelector('#user_password')
+    const passwordConfField = control.querySelector('#user_password_confirmation')
 
     if (control) control.addEventListener('input', passwordConfirmation)
 
