@@ -2,6 +2,14 @@
 // They will automatically be included in application.scss.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.good_test_result {
+  color: green;
+}
+
+.bad_test_result {
+  color: red;
+}
+
 .progress_bar {
   width: 30%;
   height: 30px;
