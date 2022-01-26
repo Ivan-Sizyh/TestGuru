@@ -2,9 +2,13 @@
 
 <%= link_to 'Создать тест', new_admin_test_path(@test) %>
 
-<table>
+<table class="table">
   <tr>
-    <th>Название</th>
+    <th class="sort-by-title pointer">
+      Название
+      <%= octicon 'arrow-up', class: 'text-success hide'%>
+      <%= octicon 'arrow-down', class: 'text-success hide'%>
+    </th>
     <th>Колличество вопросов</th>
     <th>Уровень</th>
     <th>Категория</th>
