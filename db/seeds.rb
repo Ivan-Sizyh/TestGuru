@@ -61,10 +61,3 @@ Answer.create!([
                  { text: 'Тёмные аллеи', question: questions[7] },
                  { text: 'Тимур и его команда', correct: true, question: questions[7] }
                ])
-
-Result.create!([
-                 { status: true, user: users[0], test: tests[0] },
-                 { status: true, user: users[0], test: tests[1] },
-                 { status: true, user: users[1], test: tests[0] },
-                 { status: true, user: users[1], test: tests[1] }
-               ])

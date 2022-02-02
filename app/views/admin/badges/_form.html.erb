@@ -1,0 +1,32 @@
+<%= form_with model: [:admin, @badge], local: true do |f| %>
+  <%= render 'shared/errors', resource: @badge %>
+
+  <p>
+    <%= f.label :title, 'Название' %><br>
+    <%= f.text_field :title, id: :badge_title %><br>
+  </p>
+
+  <p>
+    <%= f.label :description, 'Описание' %><br>
+    <%= f.text_area :description, id: :badge_description, rows: 7, cols: 60 %><br>
+  </p>
+
+  <p>
+    <%= f.label :image, 'Ссылка на изображение' %><br>
+    <%= f.text_field :image, id: :badge_image %><br>
+  </p>
+
+  <div class="event_params">
+    <p class="badge_event_field">
+      <%= f.label :event, 'Событие' %><br>
+      <%= f.select :event, Badge::EVENTS.map { |event| [t("admin.badges.events.#{event}"), event] } %><br>
+    </p>
+
+    <p class="badge_criterion">
+      <%= f.label :criterion, 'Критерий' %><br>
+      <%= f.text_field :criterion, id: :badge_criterion %><br>
+    </p>
+  </div>
+
+  <p><%= f.submit "Сохранить" %></p>
+<% end %>

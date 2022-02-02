@@ -6,6 +6,7 @@ class ResultsController < ApplicationController
   end
 
   def score
+    BadgesService.new(@result).call
   end
 
   def update

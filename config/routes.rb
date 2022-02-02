@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :gists, only: :create
 
+  resources :badges, only: :index
+
   resources :tests, only: :index do
     member do
       post :start
@@ -19,6 +21,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    resources :badges
     resources :gists, only: :index
     resources :tests do
       resources :questions, except: %i[index], shallow: true do
