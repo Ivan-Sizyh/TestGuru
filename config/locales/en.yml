@@ -44,3 +44,8 @@ en:
   services:
     gist:
       description: "A question about %{test} from TestGuru"
+
+  admin:
+    tests:
+      form_inline:
+        submit: "OK"

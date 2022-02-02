@@ -19,6 +19,10 @@ class Result < ApplicationRecord
     ((self.correct_questions.to_f / self.test.questions.count) * 100).round(2)
   end
 
+  def calculate_result_progress
+    (self.current_question_number - 1) * 100 / self.test.questions.count
+  end
+
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
 
