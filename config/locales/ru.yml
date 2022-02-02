@@ -36,7 +36,6 @@ ru:
       criterion:
         default: "Все"
 
-
   activerecord:
     attributes:
       user:
