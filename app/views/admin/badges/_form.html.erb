@@ -19,7 +19,7 @@
   <div class="event_params">
     <p class="badge_event_field">
       <%= f.label :event, 'Событие' %><br>
-      <%= f.select :event, Badge::EVENTS.map { |event| [t("admin.badges.events.#{event}"), event] } %><br>
+      <%= f.select :event, Badge::events.map { |event, index| [t("admin.badges.events.#{event}"), index] } %><br>
     </p>
 
     <p class="badge_criterion">

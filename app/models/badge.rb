@@ -1,8 +1,9 @@
 class Badge < ApplicationRecord
-  EVENTS = %w[all_tests? all_tests_level? first_try? all_tests_category?]
-  URL_PATTERN = /[http.s]?:\/\/(\S+)/
+  enum events: { all_tests_level: 0, first_try: 1, all_tests_category: 2 }
+  URL_PATTERN = /[http.s]?:\/\/(\S+)/.freeze
 
-  has_and_belongs_to_many :users
+  has_many :badges_users, dependent: :destroy
+  has_many :users, through: :badges_users
 
   validates :title, presence: true,
                     uniqueness: { case_sensitive: false }
@@ -10,4 +11,5 @@ class Badge < ApplicationRecord
   validates :image, presence: true,
                     format: { with: URL_PATTERN }
   validates :event, presence: true
+  validates :criterion, presence: true
 end

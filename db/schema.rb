@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_27_105806) do
+ActiveRecord::Schema.define(version: 2022_02_04_154937) do
 
   create_table "answers", force: :cascade do |t|
     t.string "text", null: false
@@ -31,11 +31,13 @@ ActiveRecord::Schema.define(version: 2022_01_27_105806) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "badges_users", id: false, force: :cascade do |t|
+  create_table "badges_users", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "badge_id", null: false
-    t.index ["badge_id", "user_id"], name: "index_badges_users_on_badge_id_and_user_id"
-    t.index ["user_id", "badge_id"], name: "index_badges_users_on_user_id_and_badge_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["badge_id"], name: "index_badges_users_on_badge_id"
+    t.index ["user_id"], name: "index_badges_users_on_user_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -114,6 +116,8 @@ ActiveRecord::Schema.define(version: 2022_01_27_105806) do
   end
 
   add_foreign_key "answers", "questions"
+  add_foreign_key "badges_users", "badges"
+  add_foreign_key "badges_users", "users"
   add_foreign_key "gists", "questions"
   add_foreign_key "gists", "users"
   add_foreign_key "questions", "tests"

@@ -44,9 +44,15 @@ class Admin::BadgesController < Admin::BaseController
     @badge = Badge.find(params[:id])
   end
 
-  private
-
   def badge_params
+    if params[:badge][:event] == Badge::events['all_tests_category'].to_s
+      params[:badge][:criterion] = Category.find_by(title: params[:badge][:criterion])&.id
+    end
+
+    if params[:badge][:event] == Badge::events['first_try'].to_s
+      params[:badge][:criterion] = Test.find_by(title: params[:badge][:criterion])&.id
+    end
+
     params.require(:badge).permit(:title, :description, :image, :event, :criterion)
   end
 end
