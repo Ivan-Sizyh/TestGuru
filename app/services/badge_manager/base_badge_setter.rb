@@ -7,6 +7,8 @@ module BadgeManager
       @badge = badge
     end
 
+    protected
+
     def successful_results
       if @user.badges.include?(@badge)
         @user.results.select do |result|
