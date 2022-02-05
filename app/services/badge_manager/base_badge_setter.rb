@@ -9,9 +9,9 @@ module BadgeManager
 
     def successful_results
       if @user.badges.include?(@badge)
-        badge_set_time = @user.badges_users.where(badge_id: @badge.id).last.created_at
-
-        @user.results.select { |result| result.status && result.created_at > badge_set_time }
+        @user.results.select do |result|
+          result.status && result.created_at > @user.badges_users.where(badge_id: @badge.id).last.created_at
+        end
       else
         @user.results.select(&:status)
       end
