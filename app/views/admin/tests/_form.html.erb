@@ -16,5 +16,10 @@
     <%= f.collection_select :category_id, Category.all, :id, :title, prompt: true%><br>
   </p>
 
+  <p>
+    <%= f.label :time, 'Время прохождения' %><br>
+    <%= f.text_field :time, id: :test_time%><br>
+  </p>
+
   <p><%= f.submit "Сохранить" %></p>
 <% end %>
