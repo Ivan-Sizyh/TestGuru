@@ -12,8 +12,8 @@ categories = Category.create!([
                                 { title: 'Литература' }
                               ])
 tests = Test.create!([
-                       { title: 'Математика средней школы', level: 1, category: categories[0], author: users[0] },
-                       { title: 'Автор и произведение', level: 0, category: categories[3], author: users[0] }
+                       { title: 'Математика средней школы', level: 1, category: categories[0], author: users[0], time: 1 },
+                       { title: 'Автор и произведение', level: 0, category: categories[3], author: users[0], time: 1 }
                      ])
 
 questions = Question.create!([
