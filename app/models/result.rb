@@ -8,7 +8,7 @@ class Result < ApplicationRecord
   SUCCESS_RATIO = 85
 
   def completed?
-    self.current_question.nil?
+    self.current_question.nil? || result_end?
   end
 
   def successful?
@@ -24,13 +24,20 @@ class Result < ApplicationRecord
   end
 
   def accept!(answer_ids)
-    self.correct_questions += 1 if correct_answer?(answer_ids)
+    unless result_end?
+      self.correct_questions += 1 if correct_answer?(answer_ids)
+      self.status = successful?
 
-    save!
+      save!
+    end
   end
 
   def current_question_number
     test.questions.order(:id).where('id <= ?', current_question.id).size
+  end
+
+  def result_timer_time
+    result_time.to_i * 1000
   end
 
   private
@@ -53,5 +60,13 @@ class Result < ApplicationRecord
     else
       test.questions.order(:id).where('id > ?', current_question.id).first
     end
+  end
+
+  def result_time
+    created_at + test.time.minutes
+  end
+
+  def result_end?
+    Time.current >= result_time
   end
 end

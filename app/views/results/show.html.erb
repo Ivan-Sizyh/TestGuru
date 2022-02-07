@@ -8,6 +8,11 @@
   Вопросов в тесте: <%= @result.test.questions.count %>
 </p>
 
+<%= content_tag :p,
+                "",
+                class: 'timer',
+                data: { time: @result.result_timer_time } %>
+
 <div class="progress_bar">
   <%= content_tag :div,
                   "",
@@ -19,7 +24,7 @@
   <b><%= @result.current_question.body %></b>
 </p>
 
-<%= form_with url: result_path(@result), local: true, method: :put do |form|%>
+<%= form_with url: result_path(@result), local: true, method: :put, class: 'result-form' do |form|%>
   <%= form.collection_check_boxes :answer_ids, @result.current_question.answers, :id, :text, include_hidden: false do |b| %>
     <p>
       <%= b.check_box id: "answer_ids_#{b.object.attributes['id']}"%>
