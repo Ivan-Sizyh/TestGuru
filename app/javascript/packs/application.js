@@ -12,6 +12,7 @@ import "utilities/password_confirmation"
 import "utilities/form_inline"
 import "utilities/progress_bar"
 import "utilities/select_criterion"
+import "utilities/timer"
 
 
 Rails.start()
