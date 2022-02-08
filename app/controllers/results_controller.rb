@@ -12,6 +12,7 @@ class ResultsController < ApplicationController
     @result.accept!(params[:answer_ids])
 
     if @result.completed?
+      BadgesService.new(@result).call
       TestsMailer.completed_test(@result).deliver_now
       redirect_to score_result_path(@result)
     else

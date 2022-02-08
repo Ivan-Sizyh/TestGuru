@@ -1,0 +1,35 @@
+<h1>Просмотр значков</h1>
+
+<%= render 'shared/errors', resource: @badge %>
+
+<p>Ваши значки:</p>
+
+<% if @user_badges.any? %>
+  <table class="table">
+    <tr>
+      <th>Название</th>
+      <th>Изображение</th>
+      <th>Описание</th>
+      <th>Событие</th>
+    </tr>
+
+    <%= render @user_badges %>
+  </table>
+<% end %>
+
+<p>Незаработанные значки:</p>
+
+<% if @remaining_badges.any? %>
+  <table class="table">
+    <tr>
+      <th>Название</th>
+      <th>Изображение</th>
+      <th>Описание</th>
+      <th>Событие</th>
+    </tr>
+
+    <%= render @remaining_badges %>
+  </table>
+<% end %>
+
+<%= link_to 'Вернуться', root_path %>
