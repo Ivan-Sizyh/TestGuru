@@ -1,17 +1,24 @@
 class BadgesService
+  RULES = {
+    Badge::events['first_try'] => Badge::FirstTryRuleSpecification,
+    Badge::events['all_tests_category'] => Badge::AllCategoriesRuleSpecification,
+    Badge::events['all_tests_level'] => Badge::AllLevelRuleSpecification
+  }.freeze
+
   def initialize(result)
     @result = result
   end
 
-  RULES = {
-    Badge::events['first_try'] => BadgeManager::FirstTryBadgeSetter,
-    Badge::events['all_tests_category'] => BadgeManager::CategoryBadgeSetter,
-    Badge::events['all_tests_level'] => BadgeManager::LevelBadgeSetter
-  }.freeze
-
   def call
     Badge.find_each do |badge|
-      RULES[badge.event.to_i].new(@result, badge).call
+      rule = RULES[badge.event.to_i].new(badge, @result)
+      add_badge(badge) if rule.satisfies?
     end
+  end
+
+  private
+
+  def add_badge(badge)
+    @result.user.badges.push(badge)
   end
 end

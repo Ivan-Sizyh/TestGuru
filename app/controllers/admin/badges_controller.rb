@@ -13,7 +13,7 @@ class Admin::BadgesController < Admin::BaseController
   end
 
   def create
-    @badge = Badge.create(badge_params)
+    @badge = BadgeCreatorService.new(badge_params).create_badge
 
     if @badge.save
       redirect_to admin_badge_path(@badge)
@@ -26,7 +26,7 @@ class Admin::BadgesController < Admin::BaseController
   end
 
   def update
-    if @badge.update(badge_params)
+    if BadgeUpdateService.new(badge_params).update_badge
       redirect_to admin_badge_path(@badge)
     else
       render :edit
@@ -45,14 +45,6 @@ class Admin::BadgesController < Admin::BaseController
   end
 
   def badge_params
-    if params[:badge][:event] == Badge::events['all_tests_category'].to_s
-      params[:badge][:criterion] = Category.find_by(title: params[:badge][:criterion])&.id
-    end
-
-    if params[:badge][:event] == Badge::events['first_try'].to_s
-      params[:badge][:criterion] = Test.find_by(title: params[:badge][:criterion])&.id
-    end
-
     params.require(:badge).permit(:title, :description, :image, :event, :criterion)
   end
 end

@@ -1,10 +1,8 @@
-module BadgeManager
-  class LevelBadgeSetter < BaseBadgeSetter
-    def call
-      if successful_results_tests.any? && (@badge.criterion == @test.level.to_s) &&
+module Badge
+  class AllLevelRuleSpecification < BaseBadgeRuleSpecification
+    def satisfied?
+      successful_results_tests.any? && (@badge.criterion == @test.level.to_s) &&
         (successful_results_tests == Test.where(level: @test.level))
-        @user.badges.push(@badge)
-      end
     end
 
     private
