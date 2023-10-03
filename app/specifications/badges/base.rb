@@ -1,5 +1,6 @@
 module Badges
-  class BaseBadgeRuleSpecification < AbstractRuleSpecification
+  class Base
+
     protected
 
     def successful_results

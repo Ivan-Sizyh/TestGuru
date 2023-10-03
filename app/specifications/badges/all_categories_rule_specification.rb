@@ -1,5 +1,6 @@
-module Badge
-  class AllCategoriesRuleSpecification < BaseBadgeRuleSpecification
+module Badges
+
+  class AllCategoriesRuleSpecification
     def satisfied?
       @test.category_id.to_s == @badge.criterion && tests_titles_by_category == all_tests_titles
     end
