@@ -1,11 +1,11 @@
 class GistQuestionService
-  GITHUB_ACCESS_TOKEN = Rails.application.credentials.github[:github_access_token]
+  GITHUB_ACCESS_TOKEN = Rails.application.credentials.github
 
   Result = Struct.new(:url, :success?)
 
   def initialize(question, client: default_client)
     @question = question
-    @test = question.test
+    @test = question.send(:test)
     @client = client
   end
 

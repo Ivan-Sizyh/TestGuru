@@ -9,7 +9,7 @@
                                        size: '200x200',
                                        onerror: 'this.error=null;this.src="https://img-fotki.yandex.ru/get/100036/137106206.762/0_1f23e4_997e0e78_orig.jpg"' %></td>
 
-<p>Событие: <%= t("admin.badges.events.#{@badge.event}", criterion: @badge.criterion) %></p>
+<p>Событие: <%= @badge.criterion %></p>
 
 <p><%= link_to 'Редактировать', edit_admin_badge_path(@badge) %></p>
 

@@ -1,8 +1,8 @@
 class BadgesService
   RULES = {
-    Badge::events['first_try'] => Badge::FirstTryRuleSpecification,
-    Badge::events['all_tests_category'] => Badge::AllCategoriesRuleSpecification,
-    Badge::events['all_tests_level'] => Badge::AllLevelRuleSpecification
+    Badge::events['first_try'] => ::Badges::FirstTryRuleSpecification,
+    Badge::events['all_tests_category'] => ::Badges::AllCategoriesRuleSpecification,
+    Badge::events['all_tests_level'] => ::Badges::AllLevelRuleSpecification
   }.freeze
 
   def initialize(result)

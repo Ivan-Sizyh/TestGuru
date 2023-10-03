@@ -1,6 +1,16 @@
 module Badges
   class Base
 
+    def initialize(badge, result)
+      @badge = badge
+      @result = result
+      @test = @result.test
+    end
+
+    def satisfies?
+      raise "#{__method__} undefined for #{self.class}"
+    end
+
     protected
 
     def successful_results

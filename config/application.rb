@@ -21,5 +21,9 @@ module TestGuru
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.autoload_paths << "#{Rails.root}/lib/clients"
+    config.autoload_paths << "#{Rails.root}/app/specifications"
+
+    config.action_view.sanitized_allowed_tags = %w[a]
+    config.action_view.sanitized_allowed_attributes = %w[href target]
   end
 end

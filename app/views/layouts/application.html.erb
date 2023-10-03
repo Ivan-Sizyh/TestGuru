@@ -12,10 +12,21 @@
 
   <body>
     <% if user_signed_in? %>
-      <p class="nav user">
-        Добро пожаловать, <b><%= current_user.email %></b> Гуру |
-        <%= link_to 'Выход', destroy_user_session_path, method: :delete %>
-      </p>
+    <div class="parent-div">
+      <div class="nav paddings">
+        <div class="nav-admin user">
+          <div class="nav-admin user-info">
+            <div class="left-div">
+              Добро пожаловать!
+            </div>
+
+            <div class="right-div">
+              | <a class="link-without-underline" rel="nofollow" data-method="delete" href="/gurus/logout">Выход</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <% end %>
 
     <%= render 'shared/flash' %>

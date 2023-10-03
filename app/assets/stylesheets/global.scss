@@ -5,3 +5,27 @@
 .hide {
   display: none;
 }
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.nav-admin.title {
+  margin-bottom: 10px;
+}
+
+.nav-admin.user-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.left-div {
+  text-align: left;
+}
+
+.right-div {
+  text-align: right;
+}

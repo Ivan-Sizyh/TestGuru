@@ -1,4 +1,18 @@
 ru:
+  admin:
+    badges:
+      events:
+        all_tests_level: "Все тесты уровня пройдены"
+        first_try: "Тест был пройден с первой попытки"
+        all_tests_category: "Все тесты категории пройдены"
+        "0": "Все тесты уровня пройдены"
+        "1": "Тест был пройден с первой попытки"
+        "2": "Все тесты категории пройдены"
+      criterion:
+        default: "Все"
+    tests:
+      form_inline:
+        submit: "OK"
   Hello: "Привет мир!"
   errors:
     messages:
@@ -22,22 +36,6 @@ ru:
   services:
     gist:
       description: "Вопрос теста %{test} с TestGuru"
-
-  admin:
-    tests:
-      form_inline:
-        submit: "OK"
-    badges:
-      events:
-        all_tests_level: "Все тесты уровня пройдены"
-        first_try: "Тест был пройден с первой попытки"
-        all_tests_category: "Все тесты категории пройдены"
-        0: "Все тесты уровня пройдены"
-        1: "Тест был пройден с первой попытки"
-        2: "Все тесты категории пройдены"
-      criterion:
-        default: "Все"
-
   activerecord:
     attributes:
       user:

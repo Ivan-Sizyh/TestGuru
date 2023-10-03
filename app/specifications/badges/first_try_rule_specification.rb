@@ -1,6 +1,6 @@
 module Badges
   class FirstTryRuleSpecification < Base
-    def satisfied?
+    def satisfies?
       (results_by_tests_count == 1) && @badge.criterion == @test.id.to_s
     end
 

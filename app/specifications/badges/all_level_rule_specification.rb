@@ -1,6 +1,6 @@
 module Badges
   class AllLevelRuleSpecification < Base
-    def satisfied?
+    def satisfies?
       successful_results_tests.any? && (@badge.criterion == @test.level.to_s) &&
         (successful_results_tests == Test.where(level: @test.level))
     end
