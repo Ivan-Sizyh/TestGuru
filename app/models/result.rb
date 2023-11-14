@@ -33,6 +33,7 @@ class Result < ApplicationRecord
   end
 
   def current_question_number
+    return test.questions.count if current_question_id == nil
     test.questions.order(:id).where('id <= ?', current_question.id).size
   end
 
@@ -47,7 +48,7 @@ class Result < ApplicationRecord
   end
 
   def correct_answer?(answer_ids)
-    correct_answers.ids.sort ==  answer_ids.to_a.map(&:to_i).sort
+    correct_answers.try(:ids).sort ==  answer_ids.try(:to_a).map(&:to_i).sort
   end
 
   def correct_answers
@@ -58,7 +59,7 @@ class Result < ApplicationRecord
     if self.new_record?
       test.questions.first if test.present?
     else
-      test.questions.order(:id).where('id > ?', current_question.id).first
+      test.questions.order(:id).where('id > ?', current_question.id).first if current_question != nil
     end
   end
 
