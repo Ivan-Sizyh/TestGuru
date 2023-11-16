@@ -1,4 +1,1 @@
-Ура!
-====
-
-Поздравляем! Вы прошли тест <%= @test.title %>. Не хотите пройти другие тесты: <%= tests_url %>?
+<%= "#{t('test-mailer.hurray')}<br>#{t('test-mailer.congratulations_message', test_title: @test.title)}#{link_to(t('test-mailer.other_tests'), tests_url)}".html_safe %>

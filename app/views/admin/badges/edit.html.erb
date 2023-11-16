@@ -1,5 +1,5 @@
-<h1>Редактирование значка значка</h1>
+<h1><%= t('activerecord.attributes.badge.edit_badge') %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Назад', admin_badge_path(@badge) %>
+<%= link_to t('actions.back'), admin_badge_path(@badge) %>

@@ -1,9 +1,9 @@
 <li>
   <%= answer.text %><br>
-  <%= link_to 'Просмотр', admin_answer_path(answer) %>
-  <%= link_to 'Редактировать', edit_admin_answer_path(answer) %>
-  <%= link_to 'Удалить',
+  <%= link_to t('actions.view'), admin_answer_path(answer) %>
+  <%= link_to t('actions.edit'), edit_admin_answer_path(answer) %>
+  <%= link_to t('actions.delete'),
               admin_answer_path(answer),
               method: :delete,
-              data: { confirm: 'Удалить ответ?' } %>
+              data: { confirm: t('actions.confirm_delete') } %>
 </li>

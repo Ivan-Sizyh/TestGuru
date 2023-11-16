@@ -1,4 +1,41 @@
 ru:
+  test-mailer:
+    hurray: "Ура!"
+    congratulations_message: "Поздравляем! Вы прошли тест %{test_title}. Не хотите пройти другие тесты: "
+    other_tests: Другие тесты
+  footer:
+    author: "Автор: Иван Сизых"
+    about: С помощью веб-сервиса TestGuru вы можете создавать и проходить различные тесты
+  result:
+    test_result: 'Правильных ответов: %{correct_questions} из %{questions_count}'
+    test_passed: Тест %{test_title} был пройден
+    pass_the_test_successfully: 'Тест пройден успешно! Процент успеха: <span class="good_test_result">%{result_percent}%</span>'
+    pass_the_test_unsuccessfully: 'Тест не пройден! Процент успеха: <span class="bad_test_result">%{result_percent}%</span>'
+    question_with_number: "Вопрос №%{number}"
+    question_count: "Вопросов в тесте: %{count}"
+  hello: Добро пожаловать!
+  nav:
+    panel: Панель администратора | TestGuru
+  entities:
+    test: Тест
+    question: Вопрос
+    answer: Ответ
+    badge: Значок
+  button:
+    list_test: Список тестов
+    submit: Подтвердить
+  actions:
+    subject: Действия
+    edit: Редактировать
+    update: Обновить
+    view: Просмотр
+    delete: Удалить
+    confirm_delete: Вы уверены?
+    back: Назад
+    save: Сохранить
+    next: Продолжить
+    start: Пройти
+    exit: Выход
   admin:
     badges:
       events:
@@ -12,8 +49,7 @@ ru:
         default: "Все"
     tests:
       form_inline:
-        submit: "OK"
-  Hello: "Привет мир!"
+        submit: OK
   errors:
     messages:
       already_confirmed: уже подтверждён. Пожалуйста, попробуйте войти в систему
@@ -62,6 +98,42 @@ ru:
         unconfirmed_email: Неподтвержденный email
         unlock_token: Токен разблокировки
         updated_at: Дата обновления
+        first_name: Имя
+        last_name: Фамилия
+      answer:
+        text: Текст
+        correct: Верный
+        new_answer: Новый ответ
+      badge:
+        edit_badge: Редактирование начка
+        new_badge: Новый значок
+        list_badges: Список значков
+        description: Описание
+        image: Изображение
+        criterion: Критерий
+        event: Событие
+        title: Описание
+        show_all_badges: Просмотр значков
+        your_badges: Ваши значки
+        unearned_badges: Незаработанные значки
+      question:
+        create_question: Создание нового вопроса в
+        edit_question: Редактирование вопроса
+        body: Вопрос
+        view_question: Просмотр вопроса
+        new_question: Новый вопрос
+        question_with_body: "Вопрос: %{body}"
+        answers_for_question: "Ответы на ворос:"
+      tests:
+        index: Название
+        start_test: "Прохождение теста %{title}"
+        back_to_test: Назад к тесту
+        count_questions: Колличество вопросов
+        level: Уровень
+        category: Категория
+        author: Автор
+        travel_time: Время прохождения
+        test_with_body: "Тест: %{body}"
   models:
     user:
       few: Пользователя
@@ -69,6 +141,8 @@ ru:
       one: Пользователь
       other: Пользователи
   devise:
+    welcome: Привет
+    hello: Привет
     confirmations:
       confirmed: Ваш адрес эл. почты успешно подтвержден.
       new:
@@ -95,7 +169,7 @@ ru:
         greeting: Здравствуйте, %{recipient}!
         message: Мы пытаемся связаться с вами, что бы сообщить, что ваш email был изменен на %{email}.
         message_unconfirmed:
-        subject: Email изменен
+          subject: Email изменен
       password_change:
         greeting: Приветствуем, %{recipient}!
         message: Мы пытаемся связаться с вами, что бы сообщить, что ваш пароль был изменен.

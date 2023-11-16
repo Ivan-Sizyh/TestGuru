@@ -1,21 +1,21 @@
-<h1>Список тестов</h1>
+<h1><%= t('button.list_test') %></h1>
 
 <table class="table">
   <tr>
     <th class="sort-by-title pointer">
-      Название
+      <%= t('activerecord.attributes.tests.index') %>
       <%= octicon 'arrow-up', class: 'text-success hide'%>
       <%= octicon 'arrow-down', class: 'text-success hide'%>
     </th>
-    <th>Колличество вопросов</th>
-    <th>Уровень</th>
-    <th>Категория</th>
-    <th>Автор</th>
-    <th>Время прохождения</th>
-    <th>Действия</th>
+    <th><%= t('activerecord.attributes.tests.count_questions') %></th>
+    <th><%= t('activerecord.attributes.tests.level') %></th>
+    <th><%= t('activerecord.attributes.tests.category') %></th>
+    <th><%= t('activerecord.attributes.tests.author') %></th>
+    <th><%= t('activerecord.attributes.tests.travel_time') %></th>
+    <th><%= t('actions.subject') %></th>
   </tr>
 
   <%= render @tests %>
 </table>
 
-<%= link_to 'Ваши значки', badges_path %>
+<%= link_to t('activerecord.attributes.badge.your_badges'), badges_path %>

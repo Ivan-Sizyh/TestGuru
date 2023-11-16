@@ -1,23 +1,23 @@
-<h1>Значок <%= @badge.title %></h1>
+<h1><%= t('entities.badge') %> <%= @badge.title %></h1>
 
-<p>Описание: <%= @badge.description %></p>
+<p><%= t('activerecord.attributes.badges.description') %>: <%= @badge.description %></p>
 
-<p>Изображение:</p>
+<p><%= t('activerecord.attributes.badges.image') %>:</p>
 
 <td class="align-middle"><%= image_tag @badge.image,
                                        src: 'Image Not Found',
                                        size: '200x200',
                                        onerror: 'this.error=null;this.src="https://img-fotki.yandex.ru/get/100036/137106206.762/0_1f23e4_997e0e78_orig.jpg"' %></td>
 
-<p>Событие: <%= @badge.criterion %></p>
+<p><%= t('activerecord.attributes.badges.criterion') %>: <%= @badge.criterion %></p>
 
-<p><%= link_to 'Редактировать', edit_admin_badge_path(@badge) %></p>
+<p><%= link_to t('actions.edit'), edit_admin_badge_path(@badge) %></p>
 
 <p>
-  <%= link_to 'Удалить',
+  <%= link_to t('actions.delete'),
               admin_badge_path(@badge),
               method: :delete,
-              data: { confirm: 'Удалить значок?' } %>
+              data: { confirm: t('actions.confirm_delete') } %>
 </p>
 
-<p><%= link_to 'Вернуться', admin_badges_path %></p>
+<p><%= link_to t('actions.back'), admin_badges_path %></p>

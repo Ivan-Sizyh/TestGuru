@@ -1,18 +1,18 @@
-<h1>Просмотр вопроса</h1>
-<p>Вопрос: <%= @question.body %></p>
-<p>Тест: <%= @question.test.title %></p>
+<h1><%= t('activerecord.attributes.question.view_question') %></h1>
+<p><%= t('activerecord.attributes.question.question_with_body', body: @question.body) %></p>
+<p><%= t('activerecord.attributes.test.test_with_body', body: @question.test.title) %></p>
 
-<h2>Ответы на ворос:</h2>
+<h2><%= t('activerecord.attributes.question.answers_for_question') %></h2>
 
-<%= link_to 'Создать ответ', new_admin_question_answer_path(@question) %>
+<%= link_to t('activerecord.attributes.answer.new_answer'), new_admin_question_answer_path(@question) %>
 
 <ol>
   <%= render @question.answers %>
 </ol>
 
-<%= link_to 'Вернуться к тесту', admin_test_path(@question.test) %>
-<%= link_to 'Редактировать', edit_admin_question_path(@question) %>
-<%= link_to 'Удалить',
+<%= link_to t('activerecord.attributes.tests.back_to_test'), admin_test_path(@question.test) %>
+<%= link_to t('actions.edit'), edit_admin_question_path(@question) %>
+<%= link_to t('actions.delete'),
             admin_question_path(@question),
             method: :delete,
-            data: { confirm: 'Удалить вопрос?' } %>
+            data: { confirm: t('actions.confirm_delete') } %>

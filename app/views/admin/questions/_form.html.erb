@@ -2,9 +2,9 @@
   <%= render 'shared/errors', resource: @question %>
 
   <p>
-    <%= f.label :body, 'Вопрос' %><br>
+    <%= f.label :body %><br>
     <%= f.text_field :body, id: :question_body%><br>
   </p>
 
-  <p><%= f.submit "Сохранить" %></p>
+  <p><%= f.submit t('actions.save') %></p>
 <% end %>

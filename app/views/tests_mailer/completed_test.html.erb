@@ -1,6 +1,1 @@
-<h1>Ура!</h1>
-
-<p>
-  Поздравляем! Вы прошли тест <%= @test.title %>. Процент правильных ответов составил <%= @result.calculate_result_percent.to_i.to_s + "%" %>. Не хотите пройти <%= link_to 'другие тесты', tests_url %>?
-</p>
-
+<%= "#{t('test-mailer.hurray')}<br>#{t('test-mailer.congratulations_message', test_title: @test.title)}#{link_to(t('test-mailer.other_tests'), tests_url)}".html_safe %>

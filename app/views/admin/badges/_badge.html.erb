@@ -6,12 +6,12 @@
                                          onerror: 'this.error=null;this.src="https://img-fotki.yandex.ru/get/100036/137106206.762/0_1f23e4_997e0e78_orig.jpg"' %></td>
   <td class="align-middle"><%= badge.description %></td>
   <td class="align-middle"><%= t("admin.badges.events.#{badge.event}") %></td>
-  <td class="align-middle"><%= link_to 'Просмотр', admin_badge_path(badge) %></td>
-  <td class="align-middle"><%= link_to 'Редактирование', edit_admin_badge_path(badge)%></td>
+  <td class="align-middle"><%= link_to t('actions.view'), admin_badge_path(badge) %></td>
+  <td class="align-middle"><%= link_to t('actions.edit'), edit_admin_badge_path(badge)%></td>
   <td class="align-middle">
-    <%= link_to 'Удалить',
+    <%= link_to t('actions.delete'),
                 admin_badge_path(badge),
                 method: :delete,
-                data: { confirm: 'Удалить значок?' } %>
+                data: { confirm: t('actions.confirm_delete') } %>
   </td>
 </tr>

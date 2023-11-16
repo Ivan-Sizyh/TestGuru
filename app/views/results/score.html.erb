@@ -1,7 +1,7 @@
-<h1>Тест <%= @result.test.title %> был пройден!</h1>
+<h1><%= t('result.test_passed', test_title: @result.test.title) %>!</h1>
 
-<p>Правильных ответов: <%= @result.correct_questions %> из <%= @result.test.questions.count %></p>
+<p><%= t('result.test_result', correct_questions: @result.correct_questions, questions_count: @result.test.questions.count) %></p>
 
 <%= render 'valuation' %>
 
-<%= link_to 'Список тестов', tests_path %>
+<%= link_to t('button.list_test'), tests_path %>

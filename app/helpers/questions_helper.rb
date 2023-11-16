@@ -1,9 +1,12 @@
 module QuestionsHelper
   def question_header(question)
-    if question.new_record?
-      "Создание нового вопроса в #{@test.title}"
-    else
-      "Редактирование вопроса #{question.test.title}"
-    end
+    action = question.new_record? ? 'create' : 'edit'
+    t("activerecord.attributes.question.#{action}_question") + " #{test_title(question)}"
+  end
+
+  private
+
+  def test_title(question)
+    question.test.title
   end
 end

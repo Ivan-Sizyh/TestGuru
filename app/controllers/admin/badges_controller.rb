@@ -2,7 +2,7 @@ class Admin::BadgesController < Admin::BaseController
   before_action :find_badge, only: %i[show edit update destroy]
 
   def index
-    @badges = Badge.all
+    @badges = Badge.includes(:badges_users).all
   end
 
   def show

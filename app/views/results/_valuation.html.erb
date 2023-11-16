@@ -1,11 +1,9 @@
 <% if @result.calculate_result_percent >= 85 %>
   <p>
-    Тест пройден успешно!
-    Процент успеха: <span class="good_test_result"><%= @result.calculate_result_percent %>%</span>
+    <%= t('result.pass_the_test_successfully', result_percent: @result.calculate_result_percent).html_safe %>
   </p>
 <% else %>
   <p>
-    Тест не пройден!
-    Процент успеха: <span class="bad_test_result"><%= @result.calculate_result_percent %>%</span>
+    <%= t('result.pass_the_test_unsuccessfully', result_percent: @result.calculate_result_percent).html_safe %>
   </p>
 <% end %>

@@ -1,19 +1,19 @@
-<h1>Список значков</h1>
+<h1><%= t('activerecord.attributes.badge.list_badges') %></h1>
 
-<%= link_to 'Создать значок', new_admin_badge_path %>
+<%= link_to t('activerecord.attributes.badge.new_badge'), new_admin_badge_path %>
 
 <%= render 'shared/errors', resource: @badge %>
 
 <table class="table">
   <tr>
-    <th>Название</th>
-    <th>Изображение</th>
-    <th>Описание</th>
-    <th>Событие</th>
-    <th colspan="3">Действия</th>
+    <th><%= t('activerecord.attributes.badge.title') %></th>
+    <th>><%= t('activerecord.attributes.badge.image') %></th>
+    <th>><%= t('activerecord.attributes.badge.description') %></th>
+    <th><%= t('activerecord.attributes.badge.event') %></th>
+    <th colspan="3"><%= t('actions.subject') %></th>
   </tr>
 
   <%= render @badges %>
 </table>
 
-<%= link_to 'Вернуться', admin_tests_path %>
+<%= link_to t('actions.back'), admin_tests_path %>

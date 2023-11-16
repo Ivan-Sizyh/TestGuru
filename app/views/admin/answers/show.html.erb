@@ -1,16 +1,16 @@
-<h1>Вопрос</h1>
+<h1><%= t('entities.question') %></h1>
 
 <%= @answer.question.body %>
 
 <p>
-  <b>Ответ:</b>
+  <b><%= t('entities.answer') %>:</b>
   <%= @answer.text %>
 </p>
 
 <p>
-  <b>Правильный:</b>
+  <b><%= t('activerecord.attributes.answer.correct') %>:</b>
   <%= I18n.t(@answer.correct)%>
 </p>
 
-<%= link_to 'Редактировать', edit_admin_answer_path(@answer) %> |
-<%= link_to 'Вернуться', admin_question_path(@answer.question) %>
+<%= link_to t('actions.edit'), edit_admin_answer_path(@answer) %> |
+<%= link_to t('actions.back'), admin_question_path(@answer.question) %>
