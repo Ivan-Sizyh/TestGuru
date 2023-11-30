@@ -1,8 +1,8 @@
 # README
-* Ruby version
+* Ruby on rails version
   6.1.4.1
 * Entities
-  Test, Question, User, Answer, Category, Test result 
+  Test, Question, User, Answer, Category, Test, Result, Badge
 * System dependencies
 
 * Configuration
